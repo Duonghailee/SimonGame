@@ -1,0 +1,32 @@
+#page {
+    color: #1F1641;
+    background-color: rgb(146, 196, 27);
+}
+
+#twitch-menu {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.content {
+    border: 2px solid black;
+}
+
+.buttons {
+    margin-top: 0.625em !important;
+}
+
+img {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 50%;
+    border: 1px solid;
+}
+
+.online {
+    background-color: rgb(92, 184, 92);
+}
+
+.offline {
+    background-color: rgb(217, 83, 79);
+}

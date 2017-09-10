@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="simo game front-end project">
+    <meta name="author" content="duonghailee">
+    <meta name="keywords" content="simon game freecodecamp.org">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Condensed" rel="stylesheet">
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <title>Simo game project</title>
+</head>
+
+<body>
+    <div class="outterCircle">
+        <div class="wrap-in">
+            <div class="rw">
+                <div class="t-l inline push green unclickable" id='3'></div>
+                <div class="t-r inline push red but unclickable" id='2'></div>
+            </div>
+            <div class="rw">
+                <div class="b-l inline push yellow unclickable" id='1'></div>
+                <div class="b-r inline push blue but unclickable" id='0'></div>
+            </div>
+        </div>
+        <div class="center">
+            <h1 class="brand">Simon<span class="small">®</span></h1>
+            <div class="rw">
+                <div class="display inline">
+                    <h1 class="count led-off">--</h1>
+                    <h3 class="label">COUNT</h3>
+                </div>
+                <div class="btn-box inline">
+                    <div class="round-btn full-red but clickable" id="start"></div>
+                    <h3 class="label">START</h3>
+                </div>
+                <div class="btn-box inline">
+                    <div class="round-btn but clickable" id="mode"></div>
+                    <h3 class="label">STRICT</h3>
+                    <div class="led" id="mode-led"></div>
+                </div>
+            </div>
+            <div class="rw bot">
+                <h3 class="label inline">OFF</h3>
+                <div class="sw-slot inline">
+                    <div class="switch" id="pwr-sw"></div>
+                </div>
+                <h3 class="label inline">ON</h3>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+
+
+
+
+
+
+
+
+</html>
