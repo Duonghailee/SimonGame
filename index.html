@@ -17,8 +17,6 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Semi+Condensed" rel="stylesheet">
-
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -29,57 +27,48 @@
 </head>
 
 <body>
-    <div class="outterCircle">
-        <div class="wrap-in">
-            <div class="rw">
-                <div class="t-l inline push green unclickable" id='3'></div>
-                <div class="t-r inline push red but unclickable" id='2'></div>
-            </div>
-            <div class="rw">
-                <div class="b-l inline push yellow unclickable" id='1'></div>
-                <div class="b-r inline push blue but unclickable" id='0'></div>
-            </div>
+    <div id="outter-circle">
+        <div class="full-part">
+            <div id="part1" class="quarter top-left inline green"></div>
+            <div id="part2" class="quarter top-right inline red"></div>
+            <div id="part3" class="quarter bottom-left inline yellow"></div>
+            <div id="part4" class="quarter bottom-right inline blue"></div>
         </div>
-        <div class="center">
-            <h1 class="brand">Simon<span class="small">®</span></h1>
-            <div class="rw">
-                <div class="display inline">
-                    <h1 class="count led-off">--</h1>
-                    <h3 class="label">COUNT</h3>
+        <div class="inner-circle">
+            <div id="game-name">
+                <h1>Simon</h1>
+            </div>
+
+            <div id="middle-control">
+                <div id="display" class="inline balance">
+                    <div id="digital-display"></div>
+                    <label>COUNT</label>
                 </div>
-                <div class="btn-box inline">
-                    <div class="round-btn full-red but clickable" id="start"></div>
-                    <h3 class="label">START</h3>
+
+                <div id="reset" class="inline balance">
+                    <div id="restart-btn" class="round-but red"></div>
+                    <label>START</label>
                 </div>
-                <div class="btn-box inline">
-                    <div class="round-btn but clickable" id="mode"></div>
-                    <h3 class="label">STRICT</h3>
-                    <div class="led" id="mode-led"></div>
+
+                <div id="strict" class="inline balance">
+                    <div id="strict-btn" class="round-but yellow"></div>
+                    <label>STRICT</label>
                 </div>
             </div>
-            <div class="rw bot">
-                <h3 class="label inline">OFF</h3>
-                <div class="sw-slot inline">
-                    <div class="switch" id="pwr-sw"></div>
+
+
+            <div id="on/off-control" class="inline">
+                <label>OFF</label>
+                <div id="slide-bar">
+                    <span id="slider" class="blue"></span>
                 </div>
-                <h3 class="label inline">ON</h3>
+                <label>ON</label>
             </div>
         </div>
     </div>
 
-
-
-
     <script src="script.js"></script>
 
 </body>
-
-
-
-
-
-
-
-
 
 </html>

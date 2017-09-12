@@ -1,32 +1,155 @@
-#page {
-    color: #1F1641;
-    background-color: rgb(146, 196, 27);
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+body,
+html {
+    background-color: #879E03;
+    font-family: "Oxygen";
+    cursor: pointer;
 }
 
-#twitch-menu {
-    margin-top: 20px;
-    margin-bottom: 20px;
+#outter-circle {
+    top: 75px;
+    margin: auto;
+    position: relative;
+    width: 480px;
+    height: 480px;
+    border-radius: 100%;
+    text-align: center;
+    background-color: #333;
+    box-shadow: 5px 5px 10px #444;
 }
 
-.content {
-    border: 2px solid black;
+.full-part {
+    position: relative;
+    top: 20px;
 }
 
-.buttons {
-    margin-top: 0.625em !important;
+.quarter {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    background-color: #555;
+    border: 10px solid #333;
 }
 
-img {
-    max-width: 50px;
-    max-height: 50px;
-    border-radius: 50%;
-    border: 1px solid;
+.inline {
+    display: inline-block;
 }
 
-.online {
-    background-color: rgb(92, 184, 92);
+.top-left {
+    border-top-left-radius: 100%;
 }
 
-.offline {
-    background-color: rgb(217, 83, 79);
+.top-right {
+    border-top-right-radius: 100%;
+}
+
+.bottom-left {
+    border-bottom-left-radius: 100%;
+}
+
+.bottom-right {
+    border-bottom-right-radius: 100%;
+}
+
+.inner-circle {
+    margin: -120px 0px 0px -120px;
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    border-radius: 100%;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    background-color: #fff;
+    border: 16px solid #000;
+}
+
+.green {
+    background-color: #24FF7F;
+}
+
+.red {
+    background-color: #FF1E08;
+}
+
+.yellow {
+    background-color: #FFE505;
+}
+
+.blue {
+    background-color: #0F6AFF;
+}
+
+#middle-control {
+    display: -webkit-inline-box;
+    margin: auto;
+}
+
+#digital-display {
+    width: 56px;
+    height: 40px;
+    border-radius: 10px;
+    color: #FF1D08;
+    text-align: center;
+    background-color: #666;
+    border: 1px solid #000;
+}
+
+.round-but {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    border-radius: 100%;
+    border: 2px solid #333;
+    margin-bottom: 8px;
+}
+
+.balance {
+    margin-left: 14px;
+    text-align: -webkit-center;
+}
+
+label {
+    text-align: center;
+    font-size: 1.0em;
+}
+
+h1 {
+    font-size: 300%;
+}
+
+#slide-bar {
+    background-color: #333;
+    border: 2px solid #222;
+    width: 50px;
+    height: 25px;
+    margin: 0 5px 0 5px;
+}
+
+#slider {
+    float: left;
+    height: 100%;
+    width: 45%;
+}
+
+
+/* Scaling for Mobile */
+
+@media screen and (max-width: 600px) {
+    #outter-circle {
+        top: 35px;
+        -moz-transform: scale(0.6);
+        -ms-transform: scale(0.6);
+        -o-transform: scale(0.6);
+        -webkit-transform: scale(0.6);
+        transform: scale(0.6);
+        -o-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        transform-origin: 0 0;
+        left: 50%;
+        margin-left: -144px;
+        margin-top: 80px;
+    }
 }
