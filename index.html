@@ -41,7 +41,7 @@
 
             <div id="middle-control">
                 <div id="display" class="inline balance">
-                    <div id="digital-display"></div>
+                    <div id="digital-display" value=""></div>
                     <label>COUNT</label>
                 </div>
 
@@ -60,8 +60,8 @@
 
             <div id="onOff-control" class="inline">
                 <label>OFF</label>
-                <div id="slide-bar" class="inline">
-                    <span id="slider" class="blue" onclick="startGame()"></span>
+                <div id="slide-bar" class="inline" onclick="toggle()">
+                    <span id="slider" value="off" class="blue"></span>
                 </div>
                 <label>ON</label>
             </div>
