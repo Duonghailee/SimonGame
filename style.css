@@ -95,6 +95,16 @@ html {
     border: 1px solid #000;
 }
 
+.small-but {
+    width: 8px;
+    height: 8px;
+    position: relative;
+    border-radius: 100%;
+    border: 1px solid #333;
+    margin-bottom: 3px;
+    background-color: #782C0C;
+}
+
 .round-but {
     width: 25px;
     height: 25px;
@@ -102,6 +112,7 @@ html {
     border-radius: 100%;
     border: 2px solid #333;
     margin-bottom: 8px;
+    box-shadow: 2px 2px 5px #444;
 }
 
 .balance {
@@ -118,12 +129,16 @@ h1 {
     font-size: 300%;
 }
 
+#onOff-control {
+    margin-top: 10px;
+}
+
 #slide-bar {
     background-color: #333;
     border: 2px solid #222;
     width: 50px;
-    height: 25px;
-    margin: 0 5px 0 5px;
+    height: 20px;
+    margin: 0 6px -4px 5px;
 }
 
 #slider {
