@@ -12,6 +12,9 @@ const tones = {
     blue: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3')
 };
 var generating = 0; // use to track reset the game when user click off
+var player = [];
+var playerIsRight = true; //use to track the game status, if player is on winning 
+
 
 function toggle() {
     var slider = document.getElementById("slider");
@@ -28,7 +31,7 @@ function toggle() {
 function startGame() {
     display.innerText = "- -";
     document.getElementById("start-btn").onclick = function() {
-        document.getElementById("start-btn").style.pointerEvents = "none";
+        document.getElementById("start-btn").style.pointerEvents = "none"; // to block start from further clicking
         var simon = new game();
         simon.start();
         count = 0;
@@ -37,7 +40,7 @@ function startGame() {
 }
 
 function clearGame() {
-    document.getElementById("start-btn").style.pointerEvents = "auto";
+    document.getElementById("start-btn").style.pointerEvents = "auto"; // to unblock start button
     document.getElementById("start-btn").onclick = function() {
         alert("please turn on game");
     }
@@ -77,7 +80,10 @@ function game() {
 
     this.start = function() {
 
-        generateMove();
+        if (playerIsRight) {
+            generateMove();
+        }
+
 
         function generateMove() {
             var t_pattern = 2000;
@@ -91,12 +97,13 @@ function game() {
                 simonPattern.push(move);
                 console.log(move);
                 count++;
-                if (count === 6) {
+                if (count === 1) {
                     clearInterval(generating);
                 }
 
                 lighten(move.colors);
                 updateCount();
+                checkWin();
                 console.log("count is update: " + count);
                 /*setTimeout(function() {
                     darkenColor(move.colors);
@@ -119,15 +126,20 @@ function lighten(colors) {
 }
 
 function lightenColor(element) {
-    document.getElementById(element).style.filter = "brightness(110%)";
-    makeSound(element);
+    var el = document.getElementById(element);
+    el.classList.add("lighten");
+    tones[element].play();
     console.log("color: " + element + " brighten");
     setTimeout(function() {
-        document.getElementById(element).style.filter = "brightness(70%)";
+        el.classList.remove("lighten");
         console.log("color: " + element + " darken");
     }, 300);
 }
 
-function makeSound(el) {
-    tones[el].play();
+function checkWin() {
+    document.getElementsByClassName("quarter").onclick = function() {
+        console.log(this.id);
+    }
+
+
 }
