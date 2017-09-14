@@ -5,6 +5,12 @@ var display = document.getElementById("digital-display");
 var count = document.getElementById("digital-display").getAttribute("value");
 var correct = true; // use to track user correct choice
 const whichPart = ['green', 'red', 'yellow', 'blue'];
+const tones = {
+    green: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
+    red: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'),
+    yellow: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'),
+    blue: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3')
+};
 
 function toggle() {
     var slider = document.getElementById("slider");
@@ -63,12 +69,7 @@ function game() {
     }
     var simonPattern = [];
     this.player = [];
-    this.tones = {
-        green: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
-        red: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'),
-        yellow: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'),
-        blue: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3')
-    };
+
     this.start = function() {
         var x;
         generateMove();
@@ -114,9 +115,14 @@ function lighten(colors) {
 
 function lightenColor(element) {
     document.getElementById(element).style.filter = "brightness(110%)";
+    makeSound(element);
     console.log("color: " + element + " brighten");
     setTimeout(function() {
         document.getElementById(element).style.filter = "brightness(70%)";
         console.log("color: " + element + " darken");
     }, 300);
+}
+
+function makeSound(el) {
+    tones[el].play();
 }
