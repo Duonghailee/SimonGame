@@ -11,6 +11,7 @@ const tones = {
     yellow: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'),
     blue: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3')
 };
+var generating = 0; // use to track reset the game when user click off
 
 function toggle() {
     var slider = document.getElementById("slider");
@@ -27,18 +28,22 @@ function toggle() {
 function startGame() {
     display.innerText = "- -";
     document.getElementById("start-btn").onclick = function() {
+        document.getElementById("start-btn").style.pointerEvents = "none";
         var simon = new game();
         simon.start();
         count = 0;
     }
+
 }
 
 function clearGame() {
+    document.getElementById("start-btn").style.pointerEvents = "auto";
     document.getElementById("start-btn").onclick = function() {
         alert("please turn on game");
     }
     count = "";
     updateCount();
+    clearInterval(generating);
 
 }
 
@@ -71,12 +76,12 @@ function game() {
     this.player = [];
 
     this.start = function() {
-        var x;
+
         generateMove();
 
         function generateMove() {
             var t_pattern = 2000;
-            x = setInterval(function() {
+            generating = setInterval(function() {
                 var move = { step: 0, colors: [] };
                 for (var i = 0; i <= count; i++) {
                     var color = whichPart[(Math.floor(Math.random() * 4))];
@@ -87,7 +92,7 @@ function game() {
                 console.log(move);
                 count++;
                 if (count === 6) {
-                    clearInterval(x);
+                    clearInterval(generating);
                 }
 
                 lighten(move.colors);
