@@ -29,6 +29,15 @@ html {
     height: 220px;
     background-color: #555;
     border: 10px solid #333;
+    filter: brightness(70%);
+}
+
+.lighten {
+    filter: brightness(110%) !important;
+}
+
+.darken {
+    filter: brightness(70%)! important;
 }
 
 .inline {

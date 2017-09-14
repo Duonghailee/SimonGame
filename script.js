@@ -3,8 +3,8 @@
 /* Global variable */
 var display = document.getElementById("digital-display");
 var count = document.getElementById("digital-display").getAttribute("value");
-
-
+var correct = true; // use to track user correct choice
+const whichPart = ['green', 'red', 'yellow', 'blue'];
 
 function toggle() {
     var slider = document.getElementById("slider");
@@ -19,20 +19,31 @@ function toggle() {
 }
 
 function startGame() {
-    var simon = new game();
     display.innerText = "- -";
+    document.getElementById("start-btn").onclick = function() {
+        var simon = new game();
+        simon.start();
+        count = 0;
+    }
 }
 
 function clearGame() {
+    document.getElementById("start-btn").onclick = function() {
+        alert("please turn on game");
+    }
     count = "";
-    display.innerHTML = count;
+    updateCount();
 
+}
+
+function updateCount() {
+    display.innerHTML = count;
 }
 
 // game Object
 function game() {
     this.isOn = false;
-    this.whichPart = ['green', 'red', 'yellow', 'blue'];
+
     this.reset = false;
     this.strictMode = false;
     this.getStrict = function() {
@@ -47,6 +58,10 @@ function game() {
     this.setStrictMode = function() {
         this.strictMode = true;
     }
+    this.getCount = function() {
+        return this.count;
+    }
+    var simonPattern = [];
     this.player = [];
     this.tones = {
         green: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
@@ -54,4 +69,54 @@ function game() {
         yellow: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'),
         blue: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3')
     };
+    this.start = function() {
+        var x;
+        generateMove();
+
+        function generateMove() {
+            var t_pattern = 2000;
+            x = setInterval(function() {
+                var move = { step: 0, colors: [] };
+                for (var i = 0; i <= count; i++) {
+                    var color = whichPart[(Math.floor(Math.random() * 4))];
+                    move.colors.push(color);
+                }
+                move.step = count;
+                simonPattern.push(move);
+                console.log(move);
+                count++;
+                if (count === 6) {
+                    clearInterval(x);
+                }
+
+                lighten(move.colors);
+                updateCount();
+                console.log("count is update: " + count);
+                /*setTimeout(function() {
+                    darkenColor(move.colors);
+                }, 400);*/
+            }, t_pattern += 2000);
+        }
+
+    }
+}
+
+function lighten(colors) {
+    var i = 0;
+    var queue = setInterval(function() {
+        lightenColor(colors[i]);
+        i++;
+        if (i >= colors.length) {
+            clearInterval(queue);
+        }
+    }, 800);
+}
+
+function lightenColor(element) {
+    document.getElementById(element).style.filter = "brightness(110%)";
+    console.log("color: " + element + " brighten");
+    setTimeout(function() {
+        document.getElementById(element).style.filter = "brightness(70%)";
+        console.log("color: " + element + " darken");
+    }, 300);
 }
