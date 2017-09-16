@@ -32,8 +32,12 @@ html {
     filter: brightness(70%);
 }
 
+.quarter:hover {
+    filter: brightness(150%);
+}
+
 .lighten {
-    filter: brightness(110%) !important;
+    filter: brightness(150%) !important;
 }
 
 .darken {
@@ -155,6 +159,19 @@ h1 {
     float: left;
     height: 100%;
     width: 45%;
+}
+
+.blink {
+    animation: blink 500ms 3 alternate;
+}
+
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
 
