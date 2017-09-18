@@ -29,10 +29,10 @@
 <body>
     <div id="outter-circle">
         <div class="full-part">
-            <div id="green" class="quarter top-left inline green"></div>
-            <div id="red" class="quarter top-right inline red"></div>
-            <div id="yellow" class="quarter bottom-left inline yellow"></div>
-            <div id="blue" class="quarter bottom-right inline blue"></div>
+            <div id="green" class="quarter top-left inline green" onClick="playerInput(this.id)"></div>
+            <div id="red" class="quarter top-right inline red" onClick="playerInput(this.id)"></div>
+            <div id="yellow" class="quarter bottom-left inline yellow" onClick="playerInput(this.id)"></div>
+            <div id="blue" class="quarter bottom-right inline blue" onClick="playerInput(this.id)"></div>
         </div>
         <div class="inner-circle">
             <div id="game-name">
@@ -46,20 +46,20 @@
                 </div>
 
                 <div id="reset" class="inline balance">
-                    <div id="start-btn" reset="false" class="round-but red" onclick="startGame()"></div>
+                    <div id="start-btn" reset="false" class="round-but red" onClick="startGame()"></div>
                     <label>START</label>
                 </div>
 
                 <div id="strict" class="inline balance">
                     <div id="strictMode" value="off" class="small-but"></div>
-                    <div id="strict-btn" class="round-but yellow" onclick="setStrict()"></div>
+                    <div id="strict-btn" class="round-but yellow" onClick="setStrict()"></div>
                     <label>STRICT</label>
                 </div>
             </div>
 
             <div id="onOff-control" class="inline">
                 <label>OFF</label>
-                <div id="slide-bar" class="inline" onclick="toggle()">
+                <div id="slide-bar" class="inline" onClick="toggle()">
                     <span id="slider" value="off" class="blue"></span>
                 </div>
                 <label>ON</label>

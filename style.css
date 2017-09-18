@@ -32,16 +32,12 @@ html {
     filter: brightness(70%);
 }
 
-.quarter:hover {
+.lighten {
     filter: brightness(150%);
 }
 
-.lighten {
-    filter: brightness(150%) !important;
-}
-
 .darken {
-    filter: brightness(70%)! important;
+    filter: brightness(70%);
 }
 
 .inline {
@@ -194,4 +190,8 @@ h1 {
         margin-left: -144px;
         margin-top: 80px;
     }
+}
+
+.non-click {
+    pointer-events: none;
 }
