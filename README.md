@@ -1,7 +1,7 @@
 # Vanila Javascript Simon Game
 NOTE, this simon game is made by a lot of efforts as It is written only by pure/ vanila javascript.
 As far as I know about javascript, i know that I don't know it at all. My respect and special thanks to Wojciech Kałużny
-who has written a very well basic pattern design to solve simon game problem, you can view his artical here
+who has written a very well basic pattern design to solve simon game problem, you can view his article here
 https://medium.com/front-end-hacking/create-simon-game-in-javascript-d53b474a7416
 I have tried some version before with nest setTimeOut funct but none of them works perfectly, actually at first i tried put setInterval inside the 
 loop and I hardly learn many things to this 'dangerous' async problem with setInerval 
