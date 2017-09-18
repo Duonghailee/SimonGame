@@ -1,37 +1,29 @@
-## Welcome to GitHub Pages
+# Vanila Javascript Simon Game
+NOTE, this simon game is made by a lot of efforts as It is written only by pure/ vanila javascript.
+As far as I know about javascript, i know that I don't know it at all. My respect and special thanks to Wojciech Kałużny
+who has written a very well basic pattern design to solve simon game problem, you can view his artical here
+https://medium.com/front-end-hacking/create-simon-game-in-javascript-d53b474a7416
+I have tried some version before with nest setTimeOut funct but none of them works perfectly, actually at first i tried put setInterval inside the 
+loop and I hardly learn many things to this 'dangerous' async problem with setInerval 
+I hope you enjoy the game
 
-You can use the [editor on GitHub](https://github.com/Duonghailee/SimonGame/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# Objective
+I build this game in order to complete the final front-end project in Freecodecamp.
+Learning more about time event in Javascript, setTimeout, setInerval...
+Drawing efficiently css object
+Object design
 
-### Markdown
+# Demo 
+Demo app here: [http://duonghailee.github.io/SimonGame](http://duonghailee.github.io/SimonGame) 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+# Technology
+Built in HTML, CSS and vanila JS.
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+# Features
+How to play: 
+- Simon game is a famous game which aims at practising your memory. In order to win the game, you need to pass 20 sequence color patterns.
+- There are 2 modes: strict and non-strict mode. With Strict mode, everytime you enter the wrong color, a failure sound plays and the game ends and automatically starts again. By contrast, non-strict mode gives you the chance to re-see the color pattern again until you put it in right order.
+- You can turn on/off the game any time you want.
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Duonghailee/SimonGame/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
