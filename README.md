@@ -14,7 +14,7 @@ Learning more about time event in Javascript, setTimeout, setInerval...
 Drawing efficiently css object
 Object design
 
-# Demo (currently not available)
+# Demo 
 Demo app here: [http://duonghailee.github.io/SimonGame](http://duonghailee.github.io/SimonGame) 
 
 # Technology
